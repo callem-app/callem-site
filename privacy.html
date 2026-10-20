@@ -12,7 +12,7 @@
   <div class="mark"><svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-1.29 1.29c-.63.63-.19 1.71.7 1.71h13.17c.89 0 1.34-1.08.71-1.71L18 16z"/></svg></div>
   <div>
     <h1>Privacy Policy</h1>
-    <p>Call'em for Android · Effective 20 October 2026</p>
+    <p>Call'em for Android · Effective 21 October 2026</p>
   </div>
 </header>
 <nav><a href="index.html">Support</a><a href="privacy.html">Privacy (EN)</a><a href="privacy-ru.html">Конфиденциальность (RU)</a></nav>
@@ -56,8 +56,9 @@
     <tr><td>Device identifier and public key</td><td>A random identifier created by the app on first use, not tied to your name, Google account or phone number. The public key lets the server verify that requests come from that device.</td><td>Until deleted on request (see <em>Your choices</em>). It contains nothing that identifies you.</td></tr>
     <tr><td>Push token</td><td>A token issued by Firebase so the server can wake up the recipient's app when a call arrives.</td><td>Replaced when it changes; cleared automatically once Firebase reports it invalid (for example after the app is uninstalled).</td></tr>
     <tr><td>App version and platform</td><td>"android" and the app version, to keep old and new apps compatible.</td><td>Same as the device.</td></tr>
-    <tr><td>Links</td><td>Which recipient device is connected to which owner device and place (identifiers only).</td><td>Until the owner removes the person or deletes the place, or the recipient leaves.</td></tr>
-    <tr><td>Encrypted messages</td><td>The encrypted call, who sent it to whom (device identifiers), timestamps and delivery status ("delivered", "accepted").</td><td>Undelivered calls expire after at most 24 hours. Delivered calls are deleted after 7 days, accepted ones after 30 days, so the sender can see the status after a restart.</td></tr>
+    <tr><td>Links</td><td>Which recipient device is connected to which owner device and place (identifiers only), and whether the owner has confirmed the person.</td><td>Until the owner removes the person or deletes the place, or the recipient leaves.</td></tr>
+    <tr><td>Owner phones of a place</td><td>If you copy your setup to a second phone (<em>Settings → Other phones</em>), the server records that both devices are owners of the same place (identifiers only), so people you add on either phone can be reached from both.</td><td>Until a phone is removed from the place or the place is deleted.</td></tr>
+    <tr><td>Encrypted messages</td><td>The encrypted call, who sent it to whom (device identifiers), timestamps and delivery status ("delivered", "accepted"). Settings copied to another phone and later changes travel the same way — end‑to‑end encrypted with a key exchanged through the QR code.</td><td>Undelivered calls expire after at most 24 hours. Delivered calls are deleted after 7 days, accepted ones after 30 days, so the sender can see the status after a restart.</td></tr>
     <tr><td>Server logs</td><td>Standard technical logs (request path, status code, time, IP address) used to keep the service running and detect abuse.</td><td>Limited in size and rotated automatically; typically a few days.</td></tr>
   </table>
   <p>The server is hosted on Hetzner in Germany (EU). We do not sell, share or analyse this data, and we do not use it for anything other than delivering your calls. Firebase Cloud Messaging is operated by Google; the push message it carries contains only encrypted data and identifiers. See the <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase privacy information</a>.</p>

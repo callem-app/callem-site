@@ -10,10 +10,11 @@
   } else { rv.forEach(function (el) { el.classList.add('in'); }); }
 
   // Start the hero animation only when visible (saves battery, keeps the loop in sync with the viewer)
-  var demo = document.querySelector('.demo');
-  if (demo && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (es, o) { es.forEach(function (e) { if (e.isIntersecting) { demo.classList.add('anim'); o.disconnect(); } }); }, { threshold: 0.3 }).observe(demo);
-  } else if (demo) demo.classList.add('anim');
+  document.querySelectorAll('.demo, .arr').forEach(function (demo) {
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es, o) { es.forEach(function (e) { if (e.isIntersecting) { demo.classList.add('anim'); o.disconnect(); } }); }, { threshold: 0.3 }).observe(demo);
+    } else demo.classList.add('anim');
+  });
 
   // Mobile nav
   var burger = document.querySelector('.burger'), links = document.querySelector('.nav-links');

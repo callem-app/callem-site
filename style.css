@@ -110,7 +110,8 @@ section { padding: 88px 0; position: relative; }
 .hero h1 .grad { background: linear-gradient(90deg, var(--pink), var(--coral)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .hero .lead { margin-top: 22px; max-width: 540px; }
 .cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; align-items: center; }
-.cta .note { width: 100%; font-size: 14px; color: var(--dim); }
+.cta .note { width: 100%; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; color: var(--dim); }
+.cta .note span::before { content: "✓"; color: var(--ok); font-weight: 900; margin-right: 7px; }
 .blobs { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
 .blob { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .55; animation: drift 18s ease-in-out infinite alternate; }
 .blob.a { width: 520px; height: 520px; left: -160px; top: -120px; background: radial-gradient(circle, rgba(161,54,91,0.9), transparent 70%); }
@@ -193,6 +194,55 @@ section { padding: 88px 0; position: relative; }
   .anim .host .sent { opacity: 1; } .anim .host .sent .ok { opacity: 1; } .anim .recv .alert { opacity: 1; } .anim .recv .idle { opacity: 0; }
 }
 
+/* ---------- arrange demo (resize + move), 10 s loop ---------- */
+.arr .scr { padding-top: 42px; }
+.arr .title { font-size: 12px; }
+.donebtn { font-size: 10px; background: var(--wine); color: #fff; padding: 3px 10px; border-radius: 999px; font-weight: 800; }
+.board { position: relative; flex: 1; }
+.atile { position: absolute; border-radius: 14px; background: var(--card); border: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; font-weight: 800; font-size: 11px; }
+.atile .ic { width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,0.08); display: grid; place-items: center; font-size: 15px; }
+.atile .hdl { position: absolute; right: 6px; bottom: 6px; width: 16px; height: 16px; border-right: 2.5px solid var(--pink); border-bottom: 2.5px solid var(--pink); border-radius: 0 0 9px 0; opacity: .85; }
+.atile.a { left: 0; top: 0; width: 48%; height: 30%; }
+.atile.b { left: 52%; top: 0; width: 48%; height: 30%; }
+.atile.c { left: 0; top: 34%; width: 48%; height: 30%; }
+.atile.d { left: 52%; top: 34%; width: 48%; height: 30%; }
+.afinger { position: absolute; width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%; background: rgba(255,255,255,0.9); box-shadow: 0 6px 18px rgba(0,0,0,0.4); opacity: 0; z-index: 5; left: 60%; top: 45%; }
+.veil { position: absolute; inset: -12px; background: #15162b; opacity: 0; z-index: 6; }
+.anim .atile.a { animation: arrA 10s infinite; }
+.anim .atile.b { animation: arrB 10s infinite; }
+.anim .atile.c { animation: arrC 10s infinite; }
+.anim .atile.d { animation: arrD 10s infinite; }
+.anim .afinger { animation: arrF 10s infinite; }
+.anim .veil { animation: arrV 10s infinite; }
+.anim .donebtn { animation: arrDone 10s infinite; }
+@keyframes arrA { 0%, 20% { width: 48%; } 32%, 100% { width: 100%; } }
+@keyframes arrB { 0%, 22% { left: 52%; top: 0; } 34%, 100% { left: 0; top: 34%; } }
+@keyframes arrC { 0%, 24% { left: 0; top: 34%; } 36%, 58% { left: 52%; top: 34%; } 67%, 100% { left: 0; top: 68%; } }
+@keyframes arrD {
+  0%, 24% { left: 52%; top: 34%; transform: none; box-shadow: none; }
+  36%, 52% { left: 0; top: 68%; transform: none; box-shadow: none; }
+  55% { left: 0; top: 68%; transform: scale(1.06); box-shadow: 0 14px 30px rgba(0,0,0,0.5); }
+  66% { left: 52%; top: 34%; transform: scale(1.06); box-shadow: 0 14px 30px rgba(0,0,0,0.5); }
+  70%, 100% { left: 52%; top: 34%; transform: none; box-shadow: none; }
+}
+@keyframes arrF {
+  0%, 10% { opacity: 0; left: 60%; top: 45%; transform: scale(1); }
+  16% { opacity: 1; left: 46%; top: 28%; }
+  19% { transform: scale(0.85); }
+  20% { left: 46%; top: 28%; }
+  32% { left: 96%; top: 28%; transform: scale(0.85); }
+  36% { opacity: 0; left: 96%; top: 28%; transform: scale(1); }
+  44% { opacity: 0; left: 24%; top: 83%; }
+  50% { opacity: 1; left: 24%; top: 83%; transform: scale(1); }
+  54% { transform: scale(0.85); }
+  55% { left: 24%; top: 83%; }
+  66% { left: 76%; top: 49%; transform: scale(0.85); }
+  70%, 100% { opacity: 0; left: 76%; top: 49%; transform: scale(1); }
+}
+@keyframes arrDone { 0%, 74% { transform: none; filter: none; } 78% { transform: scale(1.15); filter: brightness(1.35); } 82%, 100% { transform: none; filter: none; } }
+@keyframes arrV { 0%, 2% { opacity: 1; } 8%, 93% { opacity: 0; } 98%, 100% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .anim .board *, .anim .donebtn { animation: none !important; } .anim .atile.a { width: 100%; } .anim .atile.b { left: 0; top: 34%; } .anim .atile.c { left: 0; top: 68%; } }
+
 /* ---------- marquee ---------- */
 .marquee { overflow: hidden; padding: 10px 0 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
 .marquee .track { display: flex; gap: 12px; width: max-content; animation: marquee 40s linear infinite; }
@@ -200,8 +250,7 @@ section { padding: 88px 0; position: relative; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 .chip { display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px 10px 12px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); font-weight: 700; font-size: 14px; white-space: nowrap; }
 .chip em { font-style: normal; font-size: 18px; }
-.chip small { color: var(--dim); font-weight: 600; }
-.chip small::before { content: "·"; margin-right: 8px; }
+.chip small { color: var(--muted); font-weight: 700; font-size: 12px; background: rgba(255,255,255,0.07); padding: 2px 9px; border-radius: 999px; }
 @media (prefers-reduced-motion: reduce) { .marquee .track { animation: none; flex-wrap: wrap; width: auto; } }
 
 /* ---------- cards / grids ---------- */
@@ -268,7 +317,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 24px 40px; align-items: flex
 footer .cols { display: flex; flex-wrap: wrap; gap: 8px 28px; }
 footer a { color: var(--muted); }
 footer a:hover { color: var(--ink); }
-footer .copy { width: 100%; font-size: 13px; color: var(--dim); }
+footer .f-bottom { width: 100%; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; font-size: 13px; color: var(--dim); padding-top: 18px; border-top: 1px solid var(--line); }
 
 /* ---------- reveal on scroll ---------- */
 .rv { opacity: 0; transform: translateY(26px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }

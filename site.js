@@ -10,9 +10,9 @@
   } else { rv.forEach(function (el) { el.classList.add('in'); }); }
 
   // Start the hero animation only when visible (saves battery, keeps the loop in sync with the viewer)
-  document.querySelectorAll('.demo, .arr').forEach(function (demo) {
+  document.querySelectorAll('.demo, .arr, .gallery').forEach(function (demo) {
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (es, o) { es.forEach(function (e) { if (e.isIntersecting) { demo.classList.add('anim'); o.disconnect(); } }); }, { threshold: 0.3 }).observe(demo);
+      new IntersectionObserver(function (es, o) { es.forEach(function (e) { if (e.isIntersecting) { demo.classList.add('anim'); o.disconnect(); } }); }, { threshold: 0.2 }).observe(demo);
     } else demo.classList.add('anim');
   });
 

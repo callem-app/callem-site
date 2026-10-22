@@ -416,8 +416,10 @@ section { padding: 88px 0; position: relative; }
 
 /* ---------- pricing plans ---------- */
 .plans { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 8px 0 0 calc(50% - min(540px, 50vw - 24px)); width: min(1080px, calc(100vw - 48px)); }
-.plan { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 22px 20px; display: flex; flex-direction: column; }
-.plan.hi { border-color: rgba(194,74,116,0.7); background: linear-gradient(180deg, rgba(161,54,91,0.28), rgba(161,54,91,0.08)), var(--card); }
+.plan { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 22px 20px; display: flex; flex-direction: column; transition: border-color .25s, background .25s, transform .25s; }
+@media (hover: hover) {
+  .plan:hover { border-color: rgba(194,74,116,0.7); background: linear-gradient(180deg, rgba(161,54,91,0.28), rgba(161,54,91,0.08)), var(--card); transform: translateY(-3px); }
+}
 .plan .pn { font-weight: 800; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--pink); }
 .plan .pp { font-size: 30px; font-weight: 900; letter-spacing: -0.02em; margin: 8px 0 12px; line-height: 1.1; }
 .plan .pp small { display: block; font-size: 12.5px; font-weight: 700; color: var(--muted); letter-spacing: 0; margin-top: 4px; }

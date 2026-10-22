@@ -5,23 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Call'em — Политика конфиденциальности</title>
 <meta name="description" content="Политика конфиденциальности приложения Call'em: что хранится на телефоне, что видит сервер Call'em, куда уходят сообщения и что мы никогда не собираем.">
+<link rel="canonical" href="https://callem-app.github.io/callem-site/privacy-ru.html">
+<link rel="alternate" hreflang="en" href="https://callem-app.github.io/callem-site/privacy.html">
+<link rel="alternate" hreflang="ru" href="https://callem-app.github.io/callem-site/privacy-ru.html">
+<link rel="icon" href="img/icon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="img/icon-180.png">
+<meta name="theme-color" content="#15162b">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <div class="mark"><svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-1.29 1.29c-.63.63-.19 1.71.7 1.71h13.17c.89 0 1.34-1.08.71-1.71L18 16z"/></svg></div>
-  <div>
-    <h1>Политика конфиденциальности</h1>
-    <p>Call'em для Android · Действует с 21 октября 2026</p>
+<div class="grain"></div>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="index-ru.html"><img src="img/icon-192.png" alt="" width="34" height="34">Call'em</a>
+    <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <a href="index-ru.html">Обзор</a>
+      <a href="guide-ru.html">Инструкция</a>
+      <a href="pro-ru.html">Pro</a>
+      <a href="privacy-ru.html">Конфиденциальность</a>
+      <span class="lang"><a href="privacy.html">EN</a><a class="active" href="privacy-ru.html">RU</a></span>
+      <a class="btn btn-primary btn-sm" href="https://play.google.com/store/apps/details?id=app.callem">Установить</a>
+    </nav>
   </div>
 </header>
-<nav><a href="index.html">Поддержка</a><a href="pro.html#ru">Pro</a><a href="privacy.html">Privacy (EN)</a><a href="privacy-ru.html">Конфиденциальность (RU)</a></nav>
 
-<main>
-  <p class="lead">Call'em — кнопка «позвать» в одно касание для дома, виллы, ресторана или офиса. Она отправляет короткие сообщения выбранным вами людям. В приложении нет аккаунтов, аналитики и рекламы. Всё, что вы настроили, хранится на вашем телефоне. Сообщения проходят через наш сервер‑ретранслятор в зашифрованном виде — сервер не может их прочитать.</p>
+<main class="doc">
+  <div class="wrap narrow">
+  <div class="head">
+    <div class="eyebrow">Конфиденциальность</div>
+    <h1 style="font-size:clamp(34px,5vw,56px)">Политика конфиденциальности</h1>
+    <p class="muted">Call'em для Android · Действует с 21 октября 2026</p>
+  </div>
+<p class="lead">Call'em — кнопка «позвать» в одно касание для дома, виллы, ресторана или офиса. Она отправляет короткие сообщения выбранным вами людям. В приложении нет аккаунтов, аналитики и рекламы. Всё, что вы настроили, хранится на вашем телефоне. Сообщения проходят через наш сервер‑ретранслятор в зашифрованном виде — сервер не может их прочитать.</p>
 
   <h2>Коротко</h2>
-  <div class="grid">
+  <div class="grid grid-2">
     <div class="card"><h3>Хранится на телефоне</h3><p class="muted">Места, кнопки, люди, комнаты (Wi‑Fi‑отпечатки), настройки, ключи шифрования и список последних 200 вызовов.</p></div>
     <div class="card"><h3>Отправляется по нажатию кнопки</h3><p class="muted">Текст сообщения, название места и, по желанию, название комнаты и время — выбранным вами получателям, в зашифрованном «из конца в конец» виде.</p></div>
     <div class="card"><h3>Что видит наш сервер</h3><p class="muted">Случайные идентификаторы устройств, push‑токен и сообщения, зашифрованные «из конца в конец». Никогда — текст, имена или кто вы.</p></div>
@@ -39,7 +58,7 @@
     <tr><td>Люди</td><td>Имена, которые вы вводите, и адрес доставки каждого человека: случайный идентификатор его устройства с Call'em.</td><td>Имена — то, что вы напечатали; приложение не читает ваши контакты.</td></tr>
     <tr><td>Ключи шифрования</td><td>Для доставки Call'em: пара ключей, идентифицирующая устройство, и по одному секретному ключу на каждое место — он передаётся получателям через QR‑код.</td><td>Хранятся в зашифрованном виде (Android Keystore). На наш сервер не отправляются.</td></tr>
     <tr><td>Комнаты</td><td>По желанию. Wi‑Fi‑отпечаток (идентификаторы ближайших точек доступа и уровни сигнала) для каждой комнаты, чтобы приложение добавляло в сообщение «📍 Кухня».</td><td>Обрабатывается только на устройстве. Никуда не передаётся; в сообщение попадает только введённое вами <em>название</em> комнаты.</td></tr>
-    <tr><td>История вызовов</td><td>Последние 200 отправленных вызовов (кнопка, получатели, время, доставлено/принято/ошибка), чтобы вы видели, что ушло.</td><td>Можно очистить в любой момент: <em>Настройки → Общие → Очистить историю</em>.</td></tr>
+    <tr><td>История вызовов</td><td>Последние 200 отправленных вызовов (кнопка, получатели, время, доставлено/принято/ошибка), чтобы вы видели, что ушло.</td><td>Можно очистить в любой момент: <em>Настройки → Общее → Очистить историю</em>.</td></tr>
     <tr><td>Полученные вызовы</td><td>Если вы <em>получаете</em> вызовы: места, к которым вы подключились, и полученные вызовы (текст, место, комната, время, принято или нет).</td><td>Удаляются, когда вы покидаете место или владелец удаляет вас.</td></tr>
     <tr><td>Предпочтения</td><td>Тема, акцентный цвет, язык, раскладка виджета, ваше имя как получателя.</td><td></td></tr>
     <tr><td>Лицензия Pro</td><td>Активен ли Pro: отметка о покупке в Google Play или введённый вами код активации.</td><td>Хранится в зашифрованном виде. См. «Покупки».</td></tr>
@@ -90,7 +109,7 @@
 
   <h2>8. Ваш выбор</h2>
   <ul>
-    <li><strong>Очистить историю</strong> — Настройки → Общие → Очистить историю вызовов.</li>
+    <li><strong>Очистить историю</strong> — Настройки → Общее → Очистить историю вызовов.</li>
     <li><strong>Удалить человека или место</strong> — удалите в настройках. Данные сразу удаляются с устройства; связь на сервере удаляется, и приложение человека забывает это место.</li>
     <li><strong>Покинуть место</strong> (как получатель) — в разделе <em>Входящие вызовы</em>. Связь удаляется с сервера, и вызовы этого места вам больше не доставляются.</li>
     <li><strong>Всё</strong> — удалите приложение или очистите его данные в настройках Android. На сервере не остаётся ничего, что могло бы вас идентифицировать; оставшиеся зашифрованные сообщения истекают в указанные выше сроки, а push‑токен очищается, когда становится недействительным. Если вы хотите, чтобы анонимная запись об устройстве тоже была удалена, напишите нам — мы это сделаем.</li>
@@ -102,8 +121,24 @@
 
   <h2>10. Контакты</h2>
   <p>Вопросы о конфиденциальности: <a href="mailto:support@callemapp.com">support@callemapp.com</a>.</p>
+  </div>
 </main>
 
-<footer>© 2026 Call'em. Firebase — товарный знак Google LLC.</footer>
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="index-ru.html"><img src="img/icon-192.png" alt="" width="34" height="34">Call'em</a>
+      <p style="margin-top:10px">Вопросы о конфиденциальности: <a href="mailto:support@callemapp.com">support@callemapp.com</a></p>
+    </div>
+    <div class="cols">
+      <a href="index-ru.html">Обзор</a>
+      <a href="guide-ru.html">Инструкция</a>
+      <a href="pro-ru.html">Pro</a>
+      <a href="privacy.html">English</a>
+    </div>
+    <div class="copy">© 2026 Call'em · Firebase и Google Play — товарные знаки Google LLC</div>
+  </div>
+</footer>
+<script src="site.js"></script>
 </body>
 </html>
